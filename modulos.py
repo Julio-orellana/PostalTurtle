@@ -68,19 +68,23 @@ def menu ():
         if op == "s":
             name1 = str(input("Ingrese el nombre del remitente: "))
             name2 = str(input("Ingrese el nombre del destinatario: "))
+            t.clear()
+            t.penup()
+            t.goto(0,0)
+            t.pendown()
             lienzo()
             #Prueba de dibujo y escritura en el nuevo lienzo de trabajo
             t.penup()
             t.goto(200, 150)
             t.pendown()
             t.write(name1)
-            t.write(name1)
+            t.write(name2)
             t.penup()
             t.goto(-200, 150)
             t.pendown()
             square(100, 100)
-            turtle.done()
             op = str(input("Desea enviar otra carta?: s/n: "))
+                    
         elif op == "n":
             print("\nSaliendo...\n")
             break
@@ -112,3 +116,4 @@ square(altura, base)
 triangle(altura)
 ovalo(radio, angulo de curvatura)
 """ 
+menu()
