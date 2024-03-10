@@ -34,9 +34,13 @@ def rectangle(height,base):
         t.right(90)
 #Dibujar un ovalo
 def ovalo (radio, angle):
+    t.seth(320)
+    x=2
     for o in range(2):
         t.circle(radio, 90)
+        t.forward(x)
         t.circle(radio//angle, 90)
+        t.forward(x*20)
 #Dibujar un cuadrado
 def square (height, base):
     for s in range(2):
@@ -61,6 +65,7 @@ def mountain(mRange, height):
         t.right(120)
         t.forward(height)
         t.left(60)
+
 #Menu Principal
 def menu ():
     op = str(input("Desea enviar una carta?: s/n "))
@@ -80,9 +85,32 @@ def menu ():
             t.write(name1)
             t.write(name2)
             t.penup()
-            t.goto(-200, 150)
+            t.goto(-599, 300)
+            t.fillcolor("#285a80")
+            t.begin_fill()
             t.pendown()
-            square(100, 100)
+            square(400, 600)
+            t.end_fill()
+            t.penup()
+            t.goto(-600,-100)
+            t.pendown()
+            t.fillcolor("#243d4f")
+            t.begin_fill()
+            square(200,600)
+            t.end_fill()
+            t.penup()
+            t.goto(-600,-150)
+            t.fillcolor("#000000")
+            
+            for i in range(10):
+                
+                square(100,20)
+                t.pendown()
+                b=i*10
+                t.goto(-580+b-i,-150-i)
+                
+            
+
             op = str(input("Desea enviar otra carta?: s/n: "))
                     
         elif op == "n":
