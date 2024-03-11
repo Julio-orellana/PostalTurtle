@@ -81,10 +81,22 @@ def menu ():
             lienzo()
             #Prueba de dibujo y escritura en el nuevo lienzo de trabajo
             t.penup()
-            t.goto(200, 150)
+
+            message='De:',name1
+            message1='para: ',name2
+            t.goto(20, 150)
             t.pendown()
-            t.write(name1)
-            t.write(name2)
+            t.write(message, font=('Arial',20))
+            t.penup()
+            t.goto(20, 75)
+            t.pendown()
+            t.write(message1, font=('Arial',15 ))
+            t.penup()
+            t.goto(20,-200)
+            t.pendown()
+            t.penup()
+            t.write("¡Descubre la magia de los volcanes en Guatemala!\n Bienvenidos a una tierra donde la naturaleza se despierta con fuerza y\n ​​belleza incomparable:\n ¡Guatemala! Hogar de algunos de los volcanes más impresionantes del mundo,\n te invitamos a explorar y maravillarte con la majestuosidad de estos gigantes de fuego.\n Desde el místico Volcán Pacaya,\n donde podrás caminar sobre lava solidificada,\n hasta el imponente Volcán de Agua,\n que domina el paisaje con su silueta majestuosa,\n cada volcán en Guatemala ofrece una experiencia única e inolvidable.\n Te esperamos con los brazos abiertos y\n el corazón lleno de pasión por compartir nuestra tierra con el mundo. \n¡Ven y únete a la experiencia de Guatemala, donde la naturaleza te dejará sin aliento!", font=('Arial',11,'normal'))
+            t.pendown()
             t.penup()
             t.goto(-599, 300)
             t.fillcolor("#285a80")
@@ -140,7 +152,6 @@ def menu ():
 
             t.fillcolor("#ffffff")
             t.begin_fill()
-            cloud(-50, 0, 50, 10)
             t.end_fill
             #montañas terminan aquí
             #creo que cuando "pones el mismo color color encima de otro se cancelan"
@@ -188,8 +199,6 @@ def cloud(x,y,radio,n):
         t.goto(random.uniform(-radio, radio), random.uniform(0, radio))
         t.pendown()
         t.circle(random.uniform(10,30))
-
-
 
 """t.seth(-45)
 ovalo(80,3)
