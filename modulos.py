@@ -5,6 +5,7 @@ Este proyecto creará una postal con una imagen en el lado izquierdo y un texto 
 """
 #Importar Modulos
 import turtle
+import random
 #Definir t
 t = turtle.Turtle()
 #Asignar velocidad a t
@@ -58,8 +59,8 @@ def triangle (height):
     t.forward(height)
 #Dibujar una montaña
 def mountain(mRange, height):
-    mRange = 2 #Cuantas montañas necesitamos
-    for m in mRange:
+        #Cuantas montañas necesitamos
+    for m in range(mRange):
         t.left(60)
         t.forward(height)
         t.right(120)
@@ -90,6 +91,7 @@ def menu ():
             t.begin_fill()
             t.pendown()
             square(400, 600)
+            #aqui va el cielo
             t.end_fill()
             t.penup()
             t.goto(-600,-100)
@@ -98,21 +100,60 @@ def menu ():
             t.begin_fill()
             square(200,600)
             t.end_fill()
+            #aqui va el lago
+
             t.penup()
             t.goto(-600,-150)
+            t.pendown()
             t.fillcolor("#000000")
-            
-            for i in range(10):
+            for i in range(20):
                 
-                square(100,20)
+                square(60,20)
                 t.pendown()
                 b=i*10
-                t.goto(-580+b-i,-150-i)
-                
-            
+                t.goto(-580+b-i,-150+i)
 
+            #muelle
+ 
+            #montañas empiezan aqui
+            t.color("black")
+            t.penup()
+            t.goto(-600,-100)
+            t.pendown()
+            t.fillcolor("#58564a")
+            t.begin_fill()
+            mountain(4,150)
+            t.end_fill()
+            t.penup()
+            t.goto(-600,-100)
+            t.pendown
+
+            t.fillcolor("#243138")
+            t.begin_fill()
+            t.penup()
+            t.color("black")
+            t.fillcolor("#35484e")
+            t.begin_fill()
+            mountain(6,100)
+            t.end_fill()
+            t.fillcolor("")
+
+            t.fillcolor("#ffffff")
+            t.begin_fill()
+            cloud(-50, 0, 50, 10)
+            t.end_fill
+            #montañas terminan aquí
+            #creo que cuando "pones el mismo color color encima de otro se cancelan"
+            t.penup()
+            t.goto(-500,-100)
+            t.pendown()
+            t.fillcolor("#35484e")
+            t.begin_fill()
+            mountain(1,400)
+            t.end_fill()
+            
             op = str(input("Desea enviar otra carta?: s/n: "))
-                    
+            
         elif op == "n":
             print("\nSaliendo...\n")
             break
@@ -134,6 +175,21 @@ def lienzo ():
     t.goto(-600, 300)
     t.pendown()
     rectangle(600, 1200)
+#Dibujar nubes
+def cloud(x,y,radio,n):
+    t.penup()
+    #Posicion en eje x & posicion en eje y
+    t.goto(x,y)
+    t.pendown()
+    #Radio de la basa de la nube
+    t.circle(radio)
+    for c in range(n):#Dibujar las orillas de la nube, n es el rango de cuantas necesitamos
+        t.penup()
+        t.goto(random.uniform(-radio, radio), random.uniform(0, radio))
+        t.pendown()
+        t.circle(random.uniform(10,30))
+
+
 
 """t.seth(-45)
 ovalo(80,3)
@@ -145,3 +201,4 @@ triangle(altura)
 ovalo(radio, angulo de curvatura)
 """ 
 menu()
+t.exitonclick()
