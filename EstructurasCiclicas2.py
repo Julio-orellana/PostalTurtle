@@ -1,25 +1,25 @@
 """
-Integrantes: Marco Díaz & Julio Orellana
-Ejercicio Estructuras cíclicas
-Este proyecto creará una postal con una imagen en el lado izquierdo y un texto del lado derecho.
+
+INTEGRANTES: MARCO DIAZ, JULIO ORELLANA
+EJERCICIO: POSTAL CON TURTLE
+DESCRIPCION DEL PROYECTO: SE GENERARA UN PAISAJE DEL LADO IZQ DE EL CANVAS Y EL LADO DERECHO TENDRA UN MENSAJE PARA INCENTIVAR
+                            EL TURISMO EN GUATEMALA Y DE QUIEN Y PARA QUIEN ESTA DIRIGIDA LA POSTAL.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Archivo En el que se ejecuara el programa principal llamando una vez a la funcion principal del back-end
+
 """
 
-#Importar Funciones de modulos
+#Importar Funciones especificas de modulos
+
 from modulos import rectangle, square, triangle, mountain, ovalo, menu, lienzo
-#Importar funciones y la libreria turtle del modulo
+
+#Importar la libreria turtle y la variable t del modulo
+
 from modulos import turtle, t
 
-"""
-Instrucciones de uso de funciones:
-t.seth(-45)
-ovalo(80,3)
-t.seth(0)
-mountain(altura)
-rectangle(altura, base)
-square(altura, base)
-triangle(altura)
-ovalo(radio, angulo de curvatura)
-"""
 
-#Menu
+#Llamar al menu principal
+
 menu()
